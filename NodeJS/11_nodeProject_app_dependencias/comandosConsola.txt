@@ -1,0 +1,79 @@
+                            npm init -y
+-y es para aceptar todo, como es un proyecto de prueba lo ponemos así
+este comando me crea el package.json
+
+
+                            npm i express apollo-server-express mysql typeorm reflect-metadata type-graphql
+express: Un framework minimalista para construir aplicaciones web en Node.js, 
+muy utilizado para crear APIs y gestionar rutas.
+
+apollo-server-express: Integra Apollo Server (una biblioteca para crear APIs GraphQL) 
+con Express, permitiendo agregar GraphQL a tus aplicaciones Express.
+
+mysql: Un conector de Node.js para interactuar con bases de datos MySQL.
+
+typeorm: Un ORM (Object-Relational Mapping) para TypeScript y JavaScript, 
+que te permite interactuar con bases de datos de manera más sencilla, sin escribir consultas SQL manuales.
+
+reflect-metadata: Una biblioteca que añade soporte de metadatos a TypeScript, 
+esencial para trabajar con decoradores en frameworks como TypeORM.
+
+type-graphql: Una biblioteca que permite crear APIs GraphQL utilizando clases y 
+decoradores de TypeScript, integrándose bien con TypeORM y otras herramientas de TypeScript.
+
+            en el archivo package.json se van a descargar las dependencias 
+
+
+
+
+
+
+                            npm i -D typescript ts-node @types/express @types&node nodemon
+
+-D es para q se descarguen los modulos que son solo para desarrollo, es decir,
+al momento de correr la aplicacion en produccion no van a ser instalados 
+Estos modulos no son necesarios para que la app funcione en produccion sino que son 
+necesarios para desarrollar 
+
+typescript: Añade soporte para TypeScript en el proyecto.
+
+ts-node: Ejecuta archivos TypeScript directamente en Node.js sin necesidad de compilarlos.
+
+@types/express: Proporciona los tipos necesarios para usar Express con TypeScript.
+
+@types/node: Proporciona los tipos para las funcionalidades de Node.js en TypeScript.
+
+nodemon: Reinicia automáticamente el servidor cuando hay cambios en los archivos.
+
+
+            ahora tenemos que configurarlos, creamos un archivo por consola
+                            npx tsc --init
+El comando npx tsc --init crea el archivo tsconfig.json, que configura cómo se compila el código TypeScript en tu proyecto.
+descomentar el:
+"outDir": "./",                     => "outDir": "./dist",   
+"rootDir": "./",                    => "rootDir": "./src",   
+"strict": true,                     verificar que este en true 
+"esModuleInterop": true,            verificar que este en true
+"experimentalDecorators": true,     descomentar y que este en true 
+"emitDecoratorMetadata": true,      descomentar y que este en true 
+
+
+                luego modificamos en package.json 
+"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+
+  =>
+
+  "scripts": {
+    "dev":"nodemon src/main.ts --exec ts-node"
+  },
+
+  main.ts es el archivo por el cual voy a ejecutar el proyecto
+
+
+creamos el servidor http, para que pueda servir nuestro endpoint un point a graftql
+creamos un archivo llamado dentro de ./src "server.ts"
+creamos una carpeta llamada "config" dentro de ./src donde va a contener los archivos de configuración 
+creamos una carpeta para definir la base de datos "entity"
+creamos una carpeta que se encarga de guardar nuestro esquema de graftql "resolvers" dentro de ./src 
