@@ -77,3 +77,23 @@ creamos un archivo llamado dentro de ./src "server.ts"
 creamos una carpeta llamada "config" dentro de ./src donde va a contener los archivos de configuración 
 creamos una carpeta para definir la base de datos "entity"
 creamos una carpeta que se encarga de guardar nuestro esquema de graftql "resolvers" dentro de ./src 
+
+error en el archivo server.ts, ingresamos en la consola en la carpeta 11... 
+                          npm ls @types/express
+11_nodeproject_app_dependencias@1.0.0 D:\StartCodingIA\NodeJS\11_nodeProject_app_dependencias
+├── @types/express@5.0.0
+└─┬ apollo-server-express@3.13.0
+  └── @types/express@4.17.14
+
+problema de versiones, reemplazamos la version 5.0 por la 4.17.14 de apollo 
+                          npm uninstall @types/express
+                          npm ls @types/express
+11_nodeproject_app_dependencias@1.0.0 D:\StartCodingIA\NodeJS\11_nodeProject_app_dependencias
+└─┬ apollo-server-express@3.13.0
+  └── @types/express@4.17.14     (no tiene mas la version 5.0)
+                          npm install @types/express@4.17.14 --save-dev
+                          npm ls @types/express
+11_nodeproject_app_dependencias@1.0.0 D:\StartCodingIA\NodeJS\11_nodeProject_app_dependencias
+├── @types/express@4.17.14
+└─┬ apollo-server-express@3.13.0
+  └── @types/express@4.17.14 deduped    (ahora tenemos versiones compatibles)                 
