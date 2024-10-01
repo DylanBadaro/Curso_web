@@ -18,6 +18,8 @@ export async function startServer(){
         schema : await buildSchema({ resolvers: [BookResolver] })
     });
 
+    await apolloServer.start();//levantar el servidor
+
     apolloServer.applyMiddleware({ app, path: '/graphql' })//nuestro apollo se va a ejecutar dentro del servidor express, se pasa la ruta
 
     return app;

@@ -97,3 +97,4 @@ problema de versiones, reemplazamos la version 5.0 por la 4.17.14 de apollo
 ├── @types/express@4.17.14
 └─┬ apollo-server-express@3.13.0
   └── @types/express@4.17.14 deduped    (ahora tenemos versiones compatibles)                 
+faltaba escribir "await apolloServer.start();" en el archivo server.ts para levantar el servidor 
