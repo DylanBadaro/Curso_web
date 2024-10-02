@@ -98,3 +98,11 @@ problema de versiones, reemplazamos la version 5.0 por la 4.17.14 de apollo
 └─┬ apollo-server-express@3.13.0
   └── @types/express@4.17.14 deduped    (ahora tenemos versiones compatibles)                 
 faltaba escribir "await apolloServer.start();" en el archivo server.ts para levantar el servidor 
+
+una vez hecho el typeorm.ts en la carpeta config y agregado el metodo conect() en main.ts, entramos a la terminal:
+                            npm install pg --save
+                            este es porque nosotros intalamos la libreria mysql pero ahora usamos postgres, este comando
+                            descarga un modulo para permitirnos conectarnos y comunicarnos con el orm 
+
+solucuion chat gpt 
+                            docker pull postgres
