@@ -104,5 +104,5 @@ una vez hecho el typeorm.ts en la carpeta config y agregado el metodo conect() e
                             este es porque nosotros intalamos la libreria mysql pero ahora usamos postgres, este comando
                             descarga un modulo para permitirnos conectarnos y comunicarnos con el orm 
 
-solucuion chat gpt 
-                            docker pull postgres
+instalamos docker, luego de eso creamos una imagen en docker con el archivo docker-compose.yml dentro de la carpeta src
+                          docker-copose up
