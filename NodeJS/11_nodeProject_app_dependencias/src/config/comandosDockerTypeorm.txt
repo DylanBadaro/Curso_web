@@ -1,0 +1,38 @@
+                                    npm install pg --save
+para usar postgres y no mysql
+
+//docker run: comando para ejecutar o descargar
+//-d ejecutar en 2do plano
+//--name "" nombre para el contenedor
+// para agregar las variables de entorno 
+// -p especificar los puertos
+
+
+docker run -d --name dbpsql -e POSTGRES_PASSWORD=pass -p 5432:5432 postgres     esta linea es la que se conecta con typeorm.ts, en el curso la contraseña es "admin"
+4ca4034ea526982d94f717ffc6594ea9235b4445f1656ecb64171deaee19db62
+
+docker run -d --name pgadmin -p 8090:80 -e PGADMIN_DEFAULT_EMAIL=dylan@gmail.com -e PGADMIN_DEFAULT_PASSWORD=pass dpage/pgadmin4    usuario y contraseña de localhost:8090
+8af0efef6ddfbc214459fb86940a1caad093b0b3c22727ff7603bd661003e605
+
+
+docker network create --attachable redinterna
+bab9e924bd804696aefe74c2a6bbe3736092a5232567bbf423f4449a59a4829c
+
+docker network connect redinterna dbpsql
+docker network connect redinterna pgadmin
+
+entra a la aplicacion de docker, luego entra a "localhost:8090"= dylan@gmail.com pass
+click en "add new server":
+en General: "Name" va el nombre del servidor (puede llamarse como sea) en este caso se llama "nodejs-course"
+en Connection: 
+"Host name/addres"  va el nombre que esta en la direccion 5432, si no sabes ejecutar en consola "docker ps" el que tenga la imagen "postgres" vas al name y ahi dice, en este caso el nombre es "dbpsql"
+"Username" va "postgres" usuario por defecto porque no le configuramos un nombre al crear el contenedor
+"Password" es lo que va luego del -e, en este caso va "pass"
+click en "save"
+
+desplegamos el servidor llamado "nodejs-course", click derecho "Create" => "Datanase..." 
+en donce dice "Database" se debe poner el mismo nombre de la base de datos a la que se va a conectar a traves de el archivo typeorm.ts, en este caso "nodejs-course"
+
+luego ejectutamos en la carpeta donde tengas el proyecto de node con la aplicacion de docker abierta "npm run dev" (como lo tengo yo)o "npm run start:dev" (como lo tiene el profe del curso)
+
+npm install pg --save (si no lo hiciste en la consola no te va a ejecutar postgres)
