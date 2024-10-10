@@ -2,7 +2,6 @@ import { startServer } from "./server";//desestructurar el metodo startServer
 import { connect } from './config/typeorm';//desestructurar el metodo conect
 
 
-
 //funcion asincrona
 async function main(){
     connect();

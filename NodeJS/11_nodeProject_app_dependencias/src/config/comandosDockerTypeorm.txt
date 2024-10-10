@@ -36,3 +36,6 @@ en donce dice "Database" se debe poner el mismo nombre de la base de datos a la 
 luego ejectutamos en la carpeta donde tengas el proyecto de node con la aplicacion de docker abierta "npm run dev" (como lo tengo yo)o "npm run start:dev" (como lo tiene el profe del curso)
 
 npm install pg --save (si no lo hiciste en la consola no te va a ejecutar postgres)
+
+para solucionar el problema de las referencias hace falta agregar "require('dotenv').config();" en server.ts e instalar dotenv con el comando "npm install dotenv"
+Explicación sobre cómo funcionan los archivos .env => https://dev.to/khriztianmoreno/introduccion-a-los-archivos-env-3e2f 

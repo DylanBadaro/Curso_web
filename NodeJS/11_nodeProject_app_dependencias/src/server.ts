@@ -7,6 +7,10 @@ import { buildSchema } from 'type-graphql'
 import { BookResolver } from './resolvers/book.resolver';
 
 
+require('dotenv').config();
+
+
+
 //funcion asincrona 
 export async function startServer(){
     //inicializamos express, con esto solo inicializamos un servidor http 
