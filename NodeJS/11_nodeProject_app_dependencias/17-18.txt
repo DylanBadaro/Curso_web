@@ -1,0 +1,13 @@
+17
+armado de entidades, es decir, lo que van a ser las tablas en postrgres
+
+creamos el archivo en entity
+book.entity.ts 
+author.entity.ts
+
+18
+crear nuestros resolvers para graphql.
+ya tenemos las entidades creadas, por lo tanto ahora se ecribe la logica
+para poder tener las operaciones crud 
+creamos author.resolvers.ts
+

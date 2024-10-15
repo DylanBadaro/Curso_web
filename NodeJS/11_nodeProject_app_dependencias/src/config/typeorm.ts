@@ -2,7 +2,7 @@ import { createConnection } from "typeorm"; //lo que esta entr {} es para desest
 import path from 'path';
 
 import { environment  } from "./environment";
-
+//console.log(environment); para ver que si recibe los parametros desde el .env
 
 export async function connect() {
     await createConnection({

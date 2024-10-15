@@ -5,6 +5,7 @@ import { ApolloServer } from 'apollo-server-express';
 import { buildSchema } from 'type-graphql'
 
 import { BookResolver } from './resolvers/book.resolver';
+import { AuthorResolver } from './resolvers/author.resolver'
 
 
 require('dotenv').config();
@@ -19,7 +20,7 @@ export async function startServer(){
 
     //instanciar un objeto de la clase apolloserver, por parametro un objeto 
     const apolloServer = new ApolloServer({
-        schema : await buildSchema({ resolvers: [BookResolver] })
+        schema : await buildSchema({ resolvers: [BookResolver, AuthorResolver] })
     });
 
     await apolloServer.start();//levantar el servidor
